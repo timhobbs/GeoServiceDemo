@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Geocode Address Lookup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using(Html.BeginForm()) {
+    <h2>@ViewBag.Title</h2>
+    @Html.ValidationSummary()
+    <ul>
+        <li>
+            <label>Street</label>
+            <input type="text" value="" name="Street" />
+        </li>
+        <li>
+            <label>City</label>
+            <input type="text" value="" name="City" />
+        </li>
+        <li>
+            <label>State Abbreviation</label>
+            <input type="text" value="" name="StateAbbreviation" />
+        </li>
+        <li>
+            <label>Zip</label>
+            <input type="text" value="" name="Zip" />
+        </li>
+        <li>
+            <button>Submit</button>
+        </li>
+    </ul>
+}
+
+<p>
+    <a href="@Url.Action("Demo")">View Demo</a>
+</p>
+
+@section scripts {
+    <script>
+        $(function () {
+            $("input[type='text']:first").focus();
+        });
+    </script>
+}
